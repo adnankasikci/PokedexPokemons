@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <title>Home</title>
+    <link href="/assets/css/tailwindOutput.css" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/components/card.css">
+
+
+</head>
+
+<body>
+
+    <div class="absolute top-0 left-0 right-0">
+        <header
+            class="py-4 text-white border-b-2 border-dotted border-slate-200 bg-slate-100 bg-opacity-10 backdrop-blur-md border-opacity-35 ">
+            <div class="flex items-center justify-between w-11/12 mx-auto">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="overflow-hidden border-[.2rem]  rounded-full w-16 h-16 avatarShape bg-slate-700 border-teal-500 p-2">
+                        <img class="object-cover" src="/assets/img/avatar.png" alt="Ash">
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="text-lg font-medium">Ash Ketchum</div>
+                        <div class="text-xs opacity-50 ">Pokemon Eğitmeni</div>
+                    </div>
+                </div>
+                <div class="relative flex items-center w-2/4 gap-3">
+                    <div>Lvl 1 : </div>
+                    <div class="flex items-start justify-start flex-1 h-6 p-1 rounded-full bg-slate-700 bard">
+                        <div class="w-full h-full rounded-full bg-gradient-to-tr from-teal-950 to-teal-900">
+                            <div
+                                class="w-2/3 h-full rounded-full bg-gradient-to-tr to-teal-300 via-teal-500 from-teal-400">
+                            </div>
+                        </div>
+                    </div>
+                    <div> 60 %</div>
+                </div>
+                <div class="flex items-center justify-center gap-4">
+                    <div
+                        class="flex items-center justify-center h-10 gap-2 px-3 text-white duration-300 bg-teal-400 bg-opacity-25 rounded-md pokeball ">
+                        <img class="w-6 h-6 animate-spin" src="/assets/svg/pokeball.svg" alt="">
+                        <span>1</span>
+                    </div>
+                    <div
+                        class="flex items-center justify-center h-10 gap-2 px-3 text-white duration-300 bg-teal-400 bg-opacity-25 rounded-md pokeball ">
+                        <img class="w-8 h-8" src="/assets/svg/pokedex.svg" alt="">
+                        <i class="fas fa-angle-left"></i>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
+
+    <div class="relative min-h-[55rem]">
+        <div class="container">
+            <div class="flex items-center justify-center pt-36">
+                <button
+                    class="px-4 py-3 mx-4 text-sm text-white duration-300 rounded-full bg-gradient-to-tr to-teal-300 via-teal-600 from-teal-500  transition-all shadow-black hover:shadow-[_0_0_10px_rgb(20_184_166/_100%)]">Pokemon
+                    Yakala!</button>
+                <!-- <div class="flex-1 h-1 bg-black rounded-full"></div> -->
+                <div class="flex-1 search">
+                    <form class="relative">
+                        <input
+                            class="w-full py-3 text-sm font-light rounded-full px-14 text-slate-500 bg-slate-100 focus:outline-none"
+                            type="text" placeholder="Pokemon adlarını arat ve incele." id="pokemonSearch">
+                        <div class="absolute top-0 bottom-0 left-0 flex items-center gap-2 px-2">
+                            <i
+                                class="p-2 text-white rounded-full bg-gradient-to-tr to-teal-300 via-teal-500 from-teal-400 fas fa-search"></i>
+                            <span>|</span>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!--PokemonCards-->
+            <div class="grid grid-cols-1 gap-10 mt-12 md:grid-cols-2 lg:grid-cols-5 pokemonCards_Box">
+                <div class="hidden ReferanceCard">
+                    <div class="overflow-hidden rounded-md text-slate-800 pokemonHoloWrapper pokemonCard">
+                        <div class="w-64 h-96"></div>
+                        <div class="absolute top-0 bottom-0 left-0 right-0">
+                            <div class="relative w-full h-full overflow-hidden">
+                                <div
+                                    class="absolute top-0 left-0 right-0 w-full py-[1.4rem] bg-gradient-to-l p-5 to-${color}-200 via-${color}-400 from-${color}-300 -z-10 ${shadow}">
+                                </div>
+                                <div class="flex items-center justify-between pt-[12px] pr-6 text-lg ps-7 ">
+                                    <div
+                                        class="text-base font-bold [text-shadow:_1px_0px_0px_rgb(255_255_255_/_1)] line-clamp-1 overflow-hidden">
+                                        ${capitalizeFirstLetter(name)}
+                                        GX</div>
+                                    <div class="flex items-center space-x-1">
+                                        <div class="flex flex-row items-center justify-center gap-2">
+                                            <div class="text-[.625rem] font-bold "><span>HP</span></div>
+                                            <span class="text-xl">${stats[0].base_stat}</span>
+                                        </div>
+                                        <div
+                                            class="flex items-center justify-center w-4 h-4 text-white rounded-full bg-gradient-to-t to-rose-500 from-rose-900">
+                                            <i class="mb-[.015px] text-[.5rem] fas fa-heart"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="relative w-full h-full overflow-hidden -z-20">
+                                    <img class="object-cover w-full h-full" src="${image}" alt="">
+                                    <div class="absolute top-0 left-0 flex justify-center w-full pt-4 mt-6 start-0">
+                                        <div class="inline">
+                                            <img class="${getClassName()}" src="${imagePath}" alt="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="absolute bottom-0 left-0 right-0 z-30">
+                                    <div class="p-5">
+                                        <div>
+                                            <div class="relative flex items-center justify-between px-2 text-sm">
+                                                <div class="absolute left-0 flex items-center gap-1 px-1">
+                                                    <div
+                                                        class="flex items-center justify-center w-4 h-4 mb-1 text-black rounded-full bg-gradient-to-br to-slate-300 from-white border border-slate-500 shadow-[_0px_0px_20px_rgb(255_255_255_/_100%)]">
+                                                        <i class="mb-[.015px] text-[.5rem] fas fa-atom"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-end justify-end w-full">
+                                                    <div class="flex justify-between w-8/12">
+                                                        <div
+                                                            class="[text-shadow:_2px_0px_2px_rgb(255_255_255_/_1)] openSans font-bold">
+                                                            Defense
+                                                        </div>
+                                                        <div
+                                                            class="[text-shadow:_2px_0px_2px_rgb(255_255_255_/_1)] openSans font-bold">
+                                                            ${stats[3].base_stat}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p
+                                                class="pt-1 pb-3 text-[.6rem] [text-shadow:_1px_1px_0px_rgb(255_255_255_/_1)]">
+                                                This pokemon does ${stats[3].base_stat} defense to itself. </p>
+                                        </div>
+                                        <div>
+                                            <div class="relative flex items-center justify-between px-2 text-sm">
+                                                <div class="absolute left-0 flex items-center gap-1 px-1">
+                                                    <div
+                                                        class="flex items-center justify-center w-4 h-4 mb-1 text-black rounded-full bg-gradient-to-br to-yellow-500 from-white border border-yellow-500 shadow-[_0px_0px_20px_rgb(255_255_255_/_100%)]">
+                                                        <i class="mb-[.015px] text-[.5rem] fas fa-sun"></i>
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center justify-center w-4 h-4 mb-1 text-black rounded-full bg-gradient-to-br to-yellow-500 from-white border border-yellow-500 shadow-[_0px_0px_20px_rgb(255_255_255_/_100%)]">
+                                                        <i class="mb-[.015px] text-[.5rem] fas fa-sun"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-end justify-end w-full">
+                                                    <div class="flex justify-between w-8/12">
+                                                        <div
+                                                            class="[text-shadow:_2px_0px_2px_rgb(255_255_255_/_1)] openSans font-bold">
+                                                            Attack
+                                                        </div>
+                                                        <div
+                                                            class="[text-shadow:_2px_0px_2px_rgb(255_255_255_/_1)] openSans font-bold">
+                                                            ${stats[2].base_stat}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p
+                                                class="pt-1 pb-3 text-[.6rem] [text-shadow:_1px_1px_0px_rgb(255_255_255_/_1)]">
+                                                This attack does ${stats[2].base_stat} damage times the amount to Energy
+                                                attached to this
+                                                Pokemon. </p>
+                                        </div>
+                                        <div>
+                                            <div
+                                                class="relative flex items-center justify-between px-2 py-1 text-sm rounded-tl-full rounded-tr-full rounded-br-full bg-gradient-to-r to-black via-cyan-500 from-black shadow-[_1px_1px_3px_rgb(255_255_255_/_100%)]">
+                                                <div
+                                                    class="absolute bottom-0 left-0 flex items-center gap-[2px] px-1 py-1">
+                                                    <div
+                                                        class="flex items-center justify-center w-4 h-4  text-black rounded-full bg-gradient-to-br to-yellow-500 from-white border border-yellow-500 shadow-[_0px_0px_20px_rgb(255_255_255_/_100%)]">
+                                                        <i class=" text-[.5rem] fas fa-sun"></i>
+                                                    </div>
+                                                    <div
+                                                        class="flex items-center justify-center w-4 h-4 text-black rounded-full bg-gradient-to-br to-slate-300 from-white border border-slate-500 shadow-[_0px_0px_20px_rgb(255_255_255_/_100%)]">
+                                                        <i class=" text-[.5rem] fas fa-atom"></i>
+                                                    </div>
+                                                </div>
+                                                <div class="flex items-end justify-end w-full text-xs ">
+                                                    <div class="flex justify-between w-8/12 text-white">
+                                                        <div class="italic font-semibold openSans">
+                                                            Tail Break GX
+                                                        </div>
+                                                        <div class="openSans">
+                                                            ${stats[3].base_stat}
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <p
+                                                class="mt-2 p-2 rounded-sm border font-semibold openSans italic border-white border-opacity-50  text-white text-[.75rem] bg-white bg-opacity-10 backdrop-blur-sm">
+                                                - - W ${weight} | Height ${height} | SPEED ${stats[5].base_stat} !</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="absolute top-0 bottom-0 left-0 right-0 z-20 w-full h-full p-[5px] ">
+                            <div
+                                class="w-full h-full border-[.20rem] border-black rounded-md shadow-[_0_0_4px_rgb(113_63_18/_100%)] ">
+                            </div>
+                        </div>
+                        <div class="absolute top-0 bottom-0 left-0 right-0 z-10 w-full h-full rounded-md">
+                            <div class="w-full h-full border-[.8rem] border-white border-solid">
+                            </div>
+                        </div>
+                        <div class="pokemonHolo">
+                            <div class="pokemonHoloBefore"></div>
+                        </div>
+                        <div class="pokemonHolo"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="flex items-center justify-center w-full py-24">
+                <Button class="p-4 text-white bg-transparent border border-white rounded-md" id="loadMoreBtn">Daha Fazla
+                    Pokemon
+                    Görüntüle</Button>
+            </div>
+
+            <!--Tailwind Colors-->
+            <div>
+                <div class="to-green-200 via-green-400 from-green-300 shadow-[_0_5px_5px_rgb(134_239_172_/_100%)]">
+                </div>
+                <div class="to-red-200 via-red-400 from-red-300 shadow-[_0_5px_5px_rgb(248_113_113_/_100%)]"></div>
+                <div class="to-blue-200 via-blue-400 from-blue-300 shadow-[_0_5px_5px_rgb(96_165_250_/_100%)]"></div>
+                <div class="to-purple-200 via-purple-400 from-purple-300 shadow-[_0_5px_5px_rgb(192_132_252_/_100%)]">
+                </div>
+                <div class="to-yellow-200 via-yellow-400 from-yellow-300 shadow-[_0_5px_5px_rgb(250_204_21_/_100%)]">
+                </div>
+                <div class="to-gray-200 via-gray-400 from-gray-300 shadow-[_0_5px_5px_rgb(156_163_175_/_100%)]"></div>
+                <div class="to-indigo-200 via-indigo-400 from-indigo-300 shadow-[_0_5px_5px_rgb(129_140_248_/_100%)]">
+                </div>
+                <div class="to-pink-200 via-pink-400 from-pink-300 shadow-[_0_5px_5px_rgb(244_114_182_/_100%)]"></div>
+                <div class="to-teal-200 via-teal-400 from-teal-300 shadow-[_0_5px_5px_rgb(45_212_191_/_100%)]"></div>
+            </div>
+        </div>
+        <div class="absolute top-0 bottom-0 left-0 right-0 pokeWorld">
+        </div>
+    </div>
+
+
+    <script src="assets/js/components/pokemonCard.js"></script>
+    <script type="module" src="assets/js/main.js"></script>
+</body>
+
+</html>

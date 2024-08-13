@@ -1,0 +1,54 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Salsa&display=swap');
+
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Salsa", cursive;
+    /* font-family: "Open Sans", sans-serif; */
+}
+
+body{
+    background-color: #131316;
+}
+
+.openSans{
+    font-family: "Open Sans", sans-serif !important;
+}
+
+.pokeWorld{
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+    background-image: url(https://i.pinimg.com/originals/8e/82/1e/8e821e704351e5e3edff1c1484b0ce3c.jpg),
+    linear-gradient(125deg, #00d6fc7e 25%, #00d6fc7e 30%, #00d6fc7e 20%, #00d6fc7e 30%, #00cfff40 40%, #cc4cfa50 55%);
+    background-position: var(--bg-pos-x) var(--bg-pos-y);
+    background-size: 100%;
+    background-attachment: fixed;
+    background-blend-mode: overlay;
+    opacity: .75;
+    mix-blend-mode: color-dodge;
+    filter: brightness(1) contrast(1);
+    mix-blend-mode: color-dodge;
+}
+
+.pokeWorld:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -20;
+    background-image: url("https://assets.codepen.io/13471/sparkles.gif");
+    background-size: 25%;
+    background-blend-mode: overlay;
+    opacity: .3;
+    mix-blend-mode: overlay;
+    filter: brightness(1) contrast(1);
+    mix-blend-mode: color-dodge;
+}
+
+
