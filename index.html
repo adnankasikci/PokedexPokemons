@@ -111,7 +111,8 @@
 
                                 <div class="relative w-full h-full overflow-hidden -z-20">
                                     <img class="object-cover w-full h-full" src="${image}" alt="">
-                                    <div class="absolute top-0 left-0 flex justify-center w-full pt-4 mt-6 start-0">
+                                    <div class="absolute top-0 left-0 start-0 w-full flex ${imagePath === generationVBlackWhite ? "
+                                        pt-4" : "pt-0" } justify-center mt-6">
                                         <div class="inline">
                                             <img class="${getClassName()}" src="${imagePath}" alt="">
                                         </div>
