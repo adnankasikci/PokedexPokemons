@@ -36,7 +36,7 @@ async function createPokemon(pokemonData, index) {
 
     const pokemonType = types[0].type.name;
     const { image, color, shadow } = getTypeInfo(pokemonType);
-    console.log(Pokemon);
+    // console.log(Pokemon);
 
     const imagePath = generationVBlackWhite || sprites.front_shiny || "/assets/svg/pokeball.svg";
 
@@ -49,7 +49,7 @@ async function createPokemon(pokemonData, index) {
     }
 
     const pokemonCard = document.createElement("div");
-    pokemonCard.className = "pokemonCards";
+    pokemonCard.className = "flex items-center justify-center pokemonCards";
 
     pokemonCard.innerHTML = `
         <div class="overflow-hidden rounded-md text-slate-800 pokemonHoloWrapper pokemonCard">

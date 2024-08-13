@@ -23,7 +23,7 @@
     <div class="absolute top-0 left-0 right-0">
         <header
             class="py-4 text-white border-b-2 border-dotted border-slate-200 bg-slate-100 bg-opacity-10 backdrop-blur-md border-opacity-35 ">
-            <div class="flex items-center justify-between w-11/12 mx-auto">
+            <div class="flex flex-col items-center justify-between w-11/12 gap-5 mx-auto lg:gap-0 lg:flex-row">
                 <div class="flex items-center gap-3">
                     <div
                         class="overflow-hidden border-[.2rem]  rounded-full w-16 h-16 avatarShape bg-slate-700 border-teal-500 p-2">
@@ -63,12 +63,12 @@
 
     <div class="relative min-h-[55rem]">
         <div class="container">
-            <div class="flex items-center justify-center pt-36">
+            <div class="flex flex-col items-center justify-center lg:flex-row pt-52 lg:pt-36">
                 <button
-                    class="px-4 py-3 mx-4 text-sm text-white duration-300 rounded-full bg-gradient-to-tr to-teal-300 via-teal-600 from-teal-500  transition-all shadow-black hover:shadow-[_0_0_10px_rgb(20_184_166/_100%)]">Pokemon
+                    class="px-4 invisible lg:visible py-3 mx-4 text-sm text-white duration-300 rounded-full bg-gradient-to-tr to-teal-300 via-teal-600 from-teal-500  transition-all shadow-black hover:shadow-[_0_0_10px_rgb(20_184_166/_100%)]">Pokemon
                     Yakala!</button>
                 <!-- <div class="flex-1 h-1 bg-black rounded-full"></div> -->
-                <div class="flex-1 search">
+                <div class="w-full lg:flex-1 search">
                     <form class="relative">
                         <input
                             class="w-full py-3 text-sm font-light rounded-full px-14 text-slate-500 bg-slate-100 focus:outline-none"
@@ -110,11 +110,10 @@
                                 </div>
 
                                 <div class="relative w-full h-full overflow-hidden -z-20">
-                                    <img class="object-cover w-full h-full" src="${image}" alt="">
-                                    <div class="absolute top-0 left-0 start-0 w-full flex ${imagePath === generationVBlackWhite ? "
-                                        pt-4" : "pt-0" } justify-center mt-6">
+                                    <!-- <img class="object-cover w-full h-full" src="${image}" alt=""> -->
+                                    <div class="absolute top-0 left-0 justify-center pt-0 mt-6">
                                         <div class="inline">
-                                            <img class="${getClassName()}" src="${imagePath}" alt="">
+                                            <!-- <img class="${getClassName()}" src="${imagePath}" alt=""> -->
                                         </div>
                                     </div>
                                 </div>
